@@ -7,9 +7,9 @@ fn main() {
     // 获取用户输入的 PID
     println!("Enter the PID of the process to monitor:");
     let mut input = String::new();
-    io::stdout().flush().expect("flush 输出失败");
-    io::stdin().read_line(&mut input).expect("读取失败");
-    let pid_u32 = input.trim().parse::<u32>().expect("不合法的PID");
+    io::stdout().flush().expect("Failed to flush stdout");
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let pid_u32 = input.trim().parse::<u32>().expect("Invalid PID format");
     let pid = Pid::from(pid_u32 as usize);
 
     loop {
